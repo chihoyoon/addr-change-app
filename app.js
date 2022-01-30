@@ -37,6 +37,7 @@ app.get("/createdb", (req, res) => {
     res.send("Database created");
   })
 })
+
 app.get("/regtable", (req, res) => {
   let sql = 'CREATE TABLE reguser(id int AUTO_INCREMENT, fname VARCHAR(30), lname VARCHAR(30), email VARCHAR(50), regpassword VARCHAR(30), passwordConfirmation VARCHAR(30), zipcode VARCHAR(7), PRIMARY KEY(id))'
   db.query(sql, (err) => {
@@ -47,6 +48,15 @@ app.get("/regtable", (req, res) => {
   })
 })
 
+app.get("/addresstable", (req, res)=>{
+  let sql='CREATE TABLE user(id int AUTO_INCREMENT, email VARCHAR(50), street_number VARCHAR(30), street_name VARCHAR(50), city VARCHAR(30), province VARCHAR(30), postcode VARCHAR(10), country VARCHAR(30), PRIMARY KEY(id))'
+  db.query(sql, (err)=>{
+    if(err){
+      throw err
+    }
+    res.send("Address table created")
+  })
+})
 
 app.get("/contacttable", (req, res)=>{
   let sql='CREATE TABLE user(id int AUTO_INCREMENT, name VARCHAR(30), email VARCHAR(50), phone VARCHAR(10), message TEXT(300), PRIMARY KEY(id))'
