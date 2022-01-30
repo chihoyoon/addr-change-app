@@ -1,0 +1,213 @@
+* {
+  box-sizing: border-box;
+}
+
+/* Set height of body and the document to 100% */
+body,
+html {
+  /* height: 100%; */
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Style tab links */
+.tablink {
+  background-color: #555;
+  color: white;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  font-size: 17px;
+  width: 20%;
+}
+/* .tabcontent p,
+h3 {
+  color: green;
+} */
+.tablink:hover {
+  /* background-color: #777; */
+  background-color: gray;
+}
+
+/* Style the tab content (and add height:100% for full page content) */
+.tabcontent {
+  /* color: white; */
+  display: none;
+  padding: 100px 20px;
+  height: 100%;
+}
+
+#Home {
+  /* background-color: red; */
+  background-color: antiquewhite;
+}
+#home-container {
+  position: relative;
+}
+#home-container img {
+  height: auto;
+  width: 100%;
+}
+#home-container button {
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  background-color: green;
+  color: white;
+  font-size: 16px;
+  padding: 12px 24px;
+  border: none;
+  cursor: pointer;
+  border-radius: 20px;
+  text-align: center;
+  width: 20%;
+  height: 5%;
+}
+#Aboutus {
+  /* background-color: green; */
+  background-color: beige;
+}
+#Register {
+  /* background-color: blue; */
+  background-color: lightgray;
+}
+#Login {
+  /* background-color: orange; */
+  background-color: blanchedalmond;
+}
+#Contactus {
+  background-color: honeydew;
+}
+/******************************************CSS for contact page***************************************************************/
+.contact3 p {
+  margin-left: 10px;
+}
+
+.contact3 h1,
+.contact3 h2,
+.contact3 h3,
+.contact3 h4,
+.contact3 h5,
+.contact3 h6 {
+  color: #3e4555;
+}
+.card-shadow {
+  padding-left: 15px;
+}
+.contact-box {
+  padding-right: 15px;
+}
+.card {
+  padding-top: 20px;
+  padding-left: 3px;
+}
+/******************************************CSS for Register page***************************************************************/
+/* body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+* {
+  box-sizing: border-box;
+} */
+
+/* Full-width input fields */
+.register-container input[type="email"],
+.register-container input[type="text"],
+.register-container input[type="password"] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+.register-container input[type="email"]:focus,
+.register-container input[type="password"]:focus,
+.register-container input[type="text"]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+/* Set a style for all buttons */
+.clearfix button {
+  background-color: #04aa6d;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 50%;
+  opacity: 0.9;
+}
+
+.clearfix button:hover {
+  opacity: 1;
+}
+
+/* Extra styles for the cancel button
+.cancelbtn {
+  padding: 14px 20px;
+  background-color: #f44336;
+} */
+
+/* Float cancel and signup buttons and add an equal width */
+/* .cancelbtn, */
+.signupbtn {
+  float: left;
+  width: 50%;
+}
+
+/* Add padding to container elements */
+.register-container {
+  padding: 16px;
+}
+
+/* Clear floats */
+/* .clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+} */
+
+/* Change styles for cancel button and signup button on extra small screens */
+@media screen and (max-width: 300px) {
+  /* .cancelbtn, */
+  .signupbtn {
+    width: 100%;
+  }
+}
+#regmessage {
+  display: none;
+  background: #f1f1f1;
+  color: #000;
+  position: relative;
+  padding: 20px;
+  margin-top: 10px;
+}
+#regmessage small {
+  padding: 10px 35px;
+  font-size: 18px;
+}
+.valid {
+  color: green;
+}
+/* .valid:before {
+  position: relative;
+  left: -5px;
+  content: "✔";
+} */
+.invalid {
+  color: red;
+}
+/* .invalid:before {
+  position: relative;
+  left: -5px;
+  content: "✖";
+} */
