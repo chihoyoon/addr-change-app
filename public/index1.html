@@ -60,6 +60,9 @@
     <button class="tablink" onclick="openPage('Login', this, 'orange')">
       Login
     </button>
+     <button class="tablink" onclick="openPage('Update', this, 'red')">
+      Update
+    </button>
     <button class="tablink" onclick="openPage('Contactus', this, 'brown')">
       Contact us
     </button>
@@ -242,6 +245,13 @@
         crossorigin="anonymous"
       ></script>
     </div>
+
+    <div id="Update" class="tabcontent">
+      <!-- <div class="update-container"> -->
+       <iframe src="./update.html" onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"></iframe>
+      <!-- </div> -->
+    </div>
+
     <div id="Contactus" class="tabcontent">
       <div class="contact3 py-5">
         <div class="row no-gutters">
