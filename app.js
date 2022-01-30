@@ -49,7 +49,7 @@ app.get("/regtable", (req, res) => {
 })
 
 app.get("/addresstable", (req, res)=>{
-  let sql='CREATE TABLE user(id int AUTO_INCREMENT, email VARCHAR(50), street_number VARCHAR(30), street_name VARCHAR(50), city VARCHAR(30), province VARCHAR(30), postcode VARCHAR(10), country VARCHAR(30), PRIMARY KEY(id))'
+  let sql='CREATE TABLE user(id int AUTO_INCREMENT, email VARCHAR(50), street_number VARCHAR(30), street_name VARCHAR(50), city VARCHAR(30), province VARCHAR(30), zipcode VARCHAR(10), country VARCHAR(30), PRIMARY KEY(id))'
   db.query(sql, (err)=>{
     if(err){
       throw err
@@ -141,6 +141,30 @@ app.post('/register', urlencodedParser, async (req, res) => {
   }
 });
 
+
+app.post('/update', urlencodedParser, async (req, res) => {
+
+    let streetNumber = req.body.street_number;
+    let streetName = req.body.street_name;
+    let city = req.body.city;
+    let province = req.body.province;
+    let zipcode = req.body.zipcode;
+    let country = req.body.country
+      
+      let sql = "UPDATE addresstable SET street_number='streetNumber', street_name='streetName', city='city', province='province', zipcode='zipcode', country='country' WHERE email='email'"
+      db.query(sql, err => {       
+        if (err) {
+          throw err
+       } else {
+         return res.status(200).send("success");
+       }
+      });
+     
+});
+
+
+
+
 app.post ('/contact', urlencodedParser, (req, res)=>{
   
   try{
@@ -171,5 +195,4 @@ app.post ('/contact', urlencodedParser, (req, res)=>{
 app.listen(port, () => {
   console.log(`Server listening on ${port}`)
 })
-
 
