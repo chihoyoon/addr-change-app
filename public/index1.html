@@ -247,9 +247,171 @@
     </div>
 
     <div id="Update" class="tabcontent">
-      <!-- <div class="update-container"> -->
-       <iframe src="./update.html" onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"></iframe>
-      <!-- </div> -->
+      <div id="all" class="container-fluid">
+      <br>    
+      <br>
+      <h1>UPDATE YOUR ADDRESS</h1>
+      <br>
+      <p>Please fill out the form below to update your address.</p>
+      <p>You may also select up to five (5) companies that you wish to update your address with.</p>
+      <br>
+      <form action="#" method="POST">
+          
+          <h3>Previous address:</h3>
+          <label for="streetnumber">Street Number:</label>
+          <input type="number" name="streetnumber" id="streetnumber" required>
+          <br>
+          <label for="streetname">Street Name:</label>
+          <input type="text" name="streetname" id="streetname" required>
+          <br>
+          <label for="city">City:</label>
+          <input type="text" name="city" id="city" required>
+          <br>
+          <label for="province">Province:</label>
+          <input type="text" name="province" id="province" required>
+          <br>
+          <label for="zip">Postal Code:</label>
+          <input type="number" name="zipcode" id="zip" required> 
+          <br>
+          <label for="country">Country:</label>
+          <input type="text" name="country" id="country" required>
+          <br>
+          <br>
+          <h3>New address:</h3>
+          <label for="streetnumber">Street Number:</label>
+          <input type="number" name="streetnumber" id="streetnumber" required>
+          <br>
+          <label for="streetname">Street Name:</label>
+          <input type="text" name="streetname" id="streetname" required>
+          <br>
+          <label for="city">City:</label>
+          <input type="text" name="city" id="city" required>
+          <br>
+          <label for="province">Province:</label>
+          <input type="text" name="province" id="province" required>
+          <br>
+          <label for="zip">Postal Code:</label>
+          <input type="number" name="zipcode" id="zip" required>
+          <br>
+          <label for="country">Country:</label>
+          <input type="text" name="country" id="country" required>
+          <br>
+          <br>
+          <h3>Start date:</h3>
+          <p>Enter the date that you would like the address change to take effect:</p>
+          <label for="startdate">Start Date:</label>
+          <input type="date" required>
+          <br>
+          <br>
+          <div>
+          <label for="companies"><h3>Companies:</h3></label>
+          <script>
+            function move(sens) {
+            maxtarget = 5;
+            
+              if (sens == 'source') {
+                
+                sourceSel = document.getElementById('source'); 
+                targetSel = document.getElementById('destination');
+              } else {
+                sourceSel = document.getElementById('destination'); 
+                targetSel = document.getElementById('source');
+              }
+              
+              i = sourceSel.options.length;
+              t = targetSel.options.length;
+              if (t >= maxtarget && sens == 'source') {
+                alert("You have exceeded the number allowed for free. Click OK to continue, or cancel to go back and edit your selection.");
+                return;
+              }
+              else {    
+            
+              while (i--) {
+            
+                if (sourceSel.options[i].selected) {
+                  
+                  if (t >= maxtarget && sens == 'source') {
+                    
+                    alert("You have exceeded the number allowed for free. Click OK to continue, or cancel to go back and edit your selection.");
+                return;
+
+                  }
+                  t = t + 1;
+              
+                  targetSel.appendChild(sourceSel.options[i]);
+            
+                }
+
+              }
+            }
+          }
+            </script>
+            <p>Select up to five (5) companies below and we'll update your address with them for free. </p><p>If you choose more than five companies, a charge of $1 will apply to each additional company. You will be taken to the payment page when you click the SUBMIT button.</p>
+            <br>
+            <select id="source" name="source" size="7" multiple="">
+            <option value="Company A">Company A</option>
+            <option value="Company B">Company B</option>
+            <option value="Company C">Company C</option>
+            <option value="Company D">Company D</option>
+            <option value="Company E">Company E</option>
+            <option value="Company F">Company F</option>
+            <option value="Company G">Company G</option>
+            <option value="Company H">Company H</option>
+            <option value="Company I">Company I</option>
+            <option value="Company J">Company J</option>
+            </select>
+            <br>
+            <br>
+            <button id="select" onclick="move('source')"> Move </button>
+            <button id="return" onclick="move('destinaton')"> Return </button>
+            <br>
+            <select id="destination" name="source" size="7" multiple="">
+            
+            <style>
+              select {
+                  width: 150px;
+                  margin: 10px;
+              }
+              select:focus {
+                  min-width: 150px;
+                  width: auto;
+              }
+          </style>
+        </div>
+        <br>
+        <br>
+          <input type="checkbox" name="declaration" id="declaration" required><label for="declaration"><h4>Declaration and Authorization</h4></label>
+          <p>I hereby declare that all information I have provided in this Application is true and correct. I understand that any falsehood or misrepresentation may result in refusal of service by Marshall Technologii. It shall be my responsibility to ensure that all information I have provided is up-to-date, and to update Marshall Technologii promptly through this Application of any changes to said information. I understand that I am solely liable for any and all damages resulting from any misrepresentation.</p>
+          <p>I authorize Marshall Technologii to update my address with the selected companies in accordance with applicable laws on the collection, use and disclosure of personal information.</p> 
+          <br>
+          <img src="/captcha.jpg" id="captchaimg"> 
+          <br>
+        <label for="captcha">Enter the code above here:</label>
+        <input id="captcha" name="captcha" type="text">
+        <br>
+        
+        <input type="submit" value="SUBMIT">
+      </form>
+      
+      <br>
+      <br>
+      </div>      
+
+      <script
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"
+      ></script>
+      <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"
+      ></script>
+      <script
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"
+      ></script>     
     </div>
 
     <div id="Contactus" class="tabcontent">
