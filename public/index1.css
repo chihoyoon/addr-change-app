@@ -10,39 +10,34 @@ html {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-/* Style tab links */
+/* Navigation bar*/
 .tablink {
-  background-color: #555;
-  color: white;
+  background-color: #553d7c;
+  color: #fff;
+  padding: 15px 30px;
+  justify-content: space-between;
   float: left;
   border: none;
-  outline: none;
   cursor: pointer;
-  padding: 14px 16px;
-  font-size: 17px;
-  width: 16.666%;
-}
-/* .tabcontent p,
-h3 {
-  color: green;
-} */
-.tablink:hover {
-  /* background-color: #777; */
-  background-color: gray;
+  font-size: 19px;
+  width: 20%;
 }
 
-/* Style the tab content (and add height:100% for full page content) */
+.tablink:hover {
+  color: yellow;
+}
+
+/* Style the tab content 
+(and add height:100% for full page content) */
 .tabcontent {
-  /* color: white; */
   display: none;
   padding: 100px 20px;
   height: 100%;
 }
 
 #Home {
-  /* background-color: red; */
   background-color: antiquewhite;
-}
+  }
 #home-container {
   position: relative;
 }
@@ -50,31 +45,28 @@ h3 {
   height: auto;
   width: 100%;
 }
+/*UPDATE button*/
 #home-container button {
-  position: absolute;
-  top: 50%;
-  left: 10%;
-  background-color: green;
+  position: relative;
+  top: 90%;
+  left: 87%; 
+  background-color: #553d7c;
   color: white;
   font-size: 16px;
-  padding: 12px 24px;
   border: none;
   cursor: pointer;
-  border-radius: 20px;
   text-align: center;
-  width: 20%;
-  height: 5%;
+  width: 150px;
+  height: 40px;
 }
+
 #Aboutus {
-  /* background-color: green; */
   background-color: beige;
 }
 #Register {
-  /* background-color: blue; */
   background-color: lightgray;
 }
 #Login {
-  /* background-color: orange; */
   background-color: blanchedalmond;
 }
 #Contactus {
@@ -211,15 +203,3 @@ hr {
   left: -5px;
   content: "✖";
 } */
-
-#Update {
-  background-color:burlywood ;
-}
-
-#Update h1 {
-  color:darkblue;
-}
-
-#Update h3 {
-  color:indigo;
-}

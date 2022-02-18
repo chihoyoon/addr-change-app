@@ -1,7 +1,8 @@
+///Registration page
 window.onload=function(){
-  let registerform=document.getElementById("regform")
+let registerform=document.getElementById("regform")
  
- let regpassword=document.getElementById("regpassword")
+let regpassword=document.getElementById("regpassword")
 let letter = document.getElementById("letter");
 let capital = document.getElementById("capital");
 let number = document.getElementById("number");
@@ -9,13 +10,10 @@ let length = document.getElementById("length");
 let regmessage=document.getElementById("regmessage")
 let special=document.getElementById("alpha")
 
-
-
 regpassword.onfocus = function() {
   regmessage.style.display = "block";
-  
-  
 }
+
 regpassword.onblur = ()=> {
   regmessage.style.display = "none";
 }
@@ -71,12 +69,13 @@ regpassword.onkeyup = ()=> {
   }
 
 
-  registerform.addEventListener("submit",async (e)=>{
-    e.preventDefault();
-    let email=document.getElementById("email")
-let regpassword=document.getElementById("regpassword")
-let passwordConfirmation=document.getElementById("passwordrepeat")
-let fname=document.getElementById("fname")
+registerform.addEventListener("submit",async (e)=>{
+ e.preventDefault();
+ let email=document.getElementById("email")
+ let regpassword=document.getElementById("regpassword")
+ let passwordConfirmation=document.getElementById("passwordrepeat")
+
+ let fname=document.getElementById("fname")
 let lname=document.getElementById("lname")
 let zipcode=document.getElementById("zipcode")
 let regularExpression  = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,16}$/;
@@ -90,10 +89,10 @@ if(fname.value==""  || lname.value==""||email.value=="" || regpassword.value==""
     errorMsg.style.color="red";
     
 //alert("All fields are required")
-}else if(fname.value.length>5){
+}else if(fname.value.length<5){
   errorMsg.textContent="Please check the length of the first name, should be only 15 characters"
   errorMsg.style.color="red";
-}else if(lname.value.length>5){
+}else if(lname.value.length<5){
   errorMsg.textContent="Please check the length of the last name, should be only 15 characters"
   errorMsg.style.color="red";
 }else if(email.value.length>30){
@@ -124,12 +123,10 @@ else{
     const data1={
       fname:fname.value,
       lname:lname.value,
-        email:email.value ,
-        regpassword:regpassword.value,
+      email:email.value,
+      regpassword:regpassword.value,
       passwordConfirmation:passwordConfirmation.value,
       zipcode:zipcode.value
-      
-      
       };
       
       let options1={
@@ -155,9 +152,9 @@ else{
    }
     }  
 })
-////////////////////////////////////////////////////////////////////////////////
+///Contact page
 
-let formContact=document.getElementById("myform");
+    let formContact=document.getElementById("myform");
     let yourName=document.getElementById("name");
     let yourEmail=document.getElementById("mail");
     let phoneNumber=document.getElementById("phone");
@@ -225,4 +222,12 @@ let formContact=document.getElementById("myform");
 
         
     });
+}
+///Login page
+window.onload=function(){
+let loginform=document.getElementById("loginform")
+//Username
+//Password (case-sensitive):
+//Enter the code above here
+//submit
 }
