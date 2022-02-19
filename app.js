@@ -75,7 +75,7 @@ app.get("/regtable", (req, res) => {
 
 // Create address table
 app.get("/addresstable", (req, res)=>{
-  let sql='CREATE TABLE address(id int AUTO_INCREMENT, email VARCHAR(50), street_number VARCHAR(30), street_name VARCHAR(50), city VARCHAR(30), province VARCHAR(30), zipcode VARCHAR(10), country VARCHAR(30), old_street_number VARCHAR(30), old_street_name VARCHAR(50), old_city VARCHAR(30), old_province VARCHAR(30), old_zipcode VARCHAR(10), old_country VARCHAR(30), PRIMARY KEY(id))'
+  let sql='CREATE TABLE address(id int AUTO_INCREMENT, street_number VARCHAR(30), street_name VARCHAR(50), city VARCHAR(30), province VARCHAR(30), zipcode VARCHAR(10), country VARCHAR(30), old_street_number VARCHAR(30), old_street_name VARCHAR(50), old_city VARCHAR(30), old_province VARCHAR(30), old_zipcode VARCHAR(10), old_country VARCHAR(30), startdate DATE, company VARCHAR(30), PRIMARY KEY(id))'
   db.query(sql, (err)=>{
     if(err){
       throw err
@@ -291,8 +291,7 @@ function generateRefreshToken(email) {
     // Update page
     app.post('/update', urlencodedParser, async (req, res) => {
 
-      // try{
-        let email = req.body.email;
+      try{
         let street_number = req.body.streetnumber;
         let street_name = req.body.streetname;
         let city = req.body.city;
@@ -304,21 +303,21 @@ function generateRefreshToken(email) {
         let old_city = req.body.old_city;
         let old_province = req.body.old_province;
         let old_zipcode = req.body.old_zipcode;
-        let old_country = req.body.old_country
+        let old_country = req.body.old_country;
+        let startdate = req.body.startdate;
+        let company = req.body.source;
     
-        if(email && street_number && street_name && city && province && zipcode && country){
+        if(street_number && street_name && city && province && zipcode && country && old_street_number && old_street_name && old_city && old_province && old_zipcode && old_country && startdate && company){
         
-          let post = {street_number:street_number, street_name:street_name, city:city, province:province, zipcode:zipcode, country:country, old_street_number:old_street_number, old_street_name:old_street_name, old_city:old_city, old_province:old_province, old_zipcode:old_zipcode, old_country:old_country}
+          let post = {street_number:street_number, street_name:street_name, city:city, province:province, zipcode:zipcode, country:country, old_street_number:old_street_number, old_street_name:old_street_name, old_city:old_city, old_province:old_province, old_zipcode:old_zipcode, old_country:old_country, startdate:startdate, company:company}
     
-          // let sql='INSERT INTO address SET ?'
-         
-          let sql = "UPDATE address SET ? WHERE email=? "
-    
+          let sql='INSERT INTO address SET ?'         
+  
           console.log(post);
-    
+
           db.query(sql, post, (err)=>{
             if(err){
-              throw err
+              throw err;
             }
             return res.status(200).send('success')
           })
@@ -327,9 +326,9 @@ function generateRefreshToken(email) {
            return res.status(400).send("bad request");
      
          }
-      //  }catch(ex){
-      //    return res.status(500).send("error");
-      //  }
+       }catch(ex){
+         return res.status(500).send("error");
+       }
          
     });
     
