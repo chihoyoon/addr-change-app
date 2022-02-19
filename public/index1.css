@@ -205,14 +205,17 @@ hr {
 } */
 
 
-#Update {
+
+/******************************************CSS for Update page***************************************************************/
+
+#update {
   background-color:burlywood ;
 }
 
-#Update h0 {
+#update h1 {
   color:darkblue;
 }
 
-#Update h2 {
+#update h2 {
   color:indigo;
 }
