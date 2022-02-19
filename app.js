@@ -319,7 +319,7 @@ function generateRefreshToken(email) {
             if(err){
               throw err;
             }
-            return res.status(200).send('success')
+            return res.status(200).send(`Succes, Your address is ${street_number} ${street_name} ${city} ${province} ${zipcode}`);
           })
           
          }else{
