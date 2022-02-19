@@ -20,7 +20,7 @@ html {
   border: none;
   cursor: pointer;
   font-size: 19px;
-  width: 20%;
+  width: 16.666%;
 }
 
 .tablink:hover {
@@ -203,3 +203,16 @@ hr {
   left: -5px;
   content: "✖";
 } */
+
+
+#Update {
+  background-color:burlywood ;
+}
+
+#Update h0 {
+  color:darkblue;
+}
+
+#Update h2 {
+  color:indigo;
+}

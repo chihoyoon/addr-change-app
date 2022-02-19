@@ -292,6 +292,7 @@ function generateRefreshToken(email) {
     app.post('/update', urlencodedParser, async (req, res) => {
 
       // try{
+        let email = req.body.email;
         let street_number = req.body.streetnumber;
         let street_name = req.body.streetname;
         let city = req.body.city;
@@ -305,13 +306,13 @@ function generateRefreshToken(email) {
         let old_zipcode = req.body.old_zipcode;
         let old_country = req.body.old_country
     
-        if(street_number && street_name && city && province && zipcode && country){
+        if(email && street_number && street_name && city && province && zipcode && country){
         
           let post = {street_number:street_number, street_name:street_name, city:city, province:province, zipcode:zipcode, country:country, old_street_number:old_street_number, old_street_name:old_street_name, old_city:old_city, old_province:old_province, old_zipcode:old_zipcode, old_country:old_country}
     
           // let sql='INSERT INTO address SET ?'
          
-          let sql = "UPDATE address SET ? "
+          let sql = "UPDATE address SET ? WHERE email=? "
     
           console.log(post);
     
