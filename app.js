@@ -75,7 +75,7 @@ app.get("/regtable", (req, res) => {
 
 // Create address table
 app.get("/addresstable", (req, res)=>{
-  let sql='CREATE TABLE address(id int AUTO_INCREMENT, street_number VARCHAR(30), street_name VARCHAR(50), city VARCHAR(30), province VARCHAR(30), zipcode VARCHAR(10), country VARCHAR(30), old_street_number VARCHAR(30), old_street_name VARCHAR(50), old_city VARCHAR(30), old_province VARCHAR(30), old_zipcode VARCHAR(10), old_country VARCHAR(30), startdate DATE, company VARCHAR(30), PRIMARY KEY(id))'
+  let sql='CREATE TABLE address(id int AUTO_INCREMENT, email VARCHAR(50), street_number VARCHAR(30), street_name VARCHAR(50), city VARCHAR(30), province VARCHAR(30), zipcode VARCHAR(10), country VARCHAR(30), old_street_number VARCHAR(30), old_street_name VARCHAR(50), old_city VARCHAR(30), old_province VARCHAR(30), old_zipcode VARCHAR(10), old_country VARCHAR(30), startdate DATE, company VARCHAR(30), PRIMARY KEY(id))'
   db.query(sql, (err)=>{
     if(err){
       throw err
@@ -313,7 +313,8 @@ function generateRefreshToken(email) {
     
           let sql='INSERT INTO address SET ?'         
   
-          console.log(post);
+          console.log(post);         
+          console.log(accessToken);
 
           db.query(sql, post, (err)=>{
             if(err){
